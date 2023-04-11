@@ -13,7 +13,6 @@ async function run() {
     await exec.exec(`/bin/bash -c "${create}"`, []);
 
     core.setOutput('destination', destination);
-    core.setOutput('platform', platform);
   } catch (error) {
     core.setFailed(error.message);
   }

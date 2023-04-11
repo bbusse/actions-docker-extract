@@ -15,8 +15,6 @@ inputs:
 outputs:
   destination:
     description: 'Destination of extracted file(s)'
-  platform:
-    description: 'The platform the image was built for'
 runs:
   using: 'node16'
   main: 'dist/index.js'
