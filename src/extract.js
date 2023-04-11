@@ -5,6 +5,7 @@ async function run() {
   try {
     const image = core.getInput('image');
     const path = core.getInput('path');
+    const platform = core.getInput('path');
     const destination = `.extracted-${Date.now()}`;
     const create = `docker cp $(docker create ${image}):/${path} ${destination}`;
 
@@ -12,6 +13,7 @@ async function run() {
     await exec.exec(`/bin/bash -c "${create}"`, []);
 
     core.setOutput('destination', destination);
+    core.setOutput('platform', platform);
   } catch (error) {
     core.setFailed(error.message);
   }
