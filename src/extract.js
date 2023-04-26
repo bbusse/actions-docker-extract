@@ -18,6 +18,8 @@ async function run() {
       ].join(' '));
     }
 
+    const platform = core.getInput('platform');
+    const destination = `.extracted-${Date.now()}`;
     const create = `docker cp $(docker create ${image}):/${path} ${destination}`;
 
     await exec.exec(`mkdir -p ${destination}`);

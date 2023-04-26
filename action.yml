@@ -15,6 +15,10 @@ inputs:
     description: 'The shell to use for extraction (default: /bin/bash)'
     required: false
     default: '/bin/bash'
+  platform:
+    description: 'The platform the image was built for'
+    required: true
+    default: 'linux/amd64'
 outputs:
   destination:
     description: 'Destination of extracted file(s)'
